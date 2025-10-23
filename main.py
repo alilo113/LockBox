@@ -17,7 +17,7 @@ style.configure("TLabel", font=("Helvetica", 18), foreground="#ECF0F1", backgrou
 style.configure("TButton", font=("Helvetica", 14), padding=10)
 
 # Title
-ttk.Label(frm, text="🔒 LockBox", anchor="center").pack(pady=20)
+ttk.Label(frm, text="🔒 LockBox", anchor="center", padding=20).pack(pady=20)
 
 # Buttons
 ttk.Button(frm, text="Generate Password").pack(fill='x', pady=10)
