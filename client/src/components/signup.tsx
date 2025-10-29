@@ -5,7 +5,7 @@ export function Signup() {
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
         <h1 className="text-3xl font-bold text-center text-blue-400 mb-8">
-          SecureVault Signup
+          LockBox Signup
         </h1>
 
         <form className="flex flex-col space-y-5">
