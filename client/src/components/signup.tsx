@@ -5,6 +5,36 @@ export function Signup() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    let payloads = {
+      username: username,
+      email: email,
+      password: password
+    }
+
+    let headers = {
+      "Content-Type": "application/json",
+      // Autorization: "Bearer " + token"
+    }
+
+    try {
+      let res = await fetch("http://localhost:4000/api/v1/auth/signup", {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(payloads)
+      });
+      let data = await res.json();
+      if (res.ok) {
+        // Handle successful signup (e.g., redirect or show success message)
+      } else {
+        throw new Error(data.message || 'Signup failed');
+      }
+    } catch (error) {
+      console.error("Error during signup:", error);
+    }
+  }
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
@@ -12,7 +42,7 @@ export function Signup() {
           LockBox Signup
         </h1>
 
-        <form className="flex flex-col space-y-5">
+        <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
           <div className="flex flex-col">
             <label
               htmlFor="email"
