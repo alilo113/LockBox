@@ -4,7 +4,7 @@ export function Signup() {
   const [email, setEmail] = useState("")
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  
+
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-gray-800 rounded-2xl shadow-lg p-8 border border-gray-700">
@@ -27,6 +27,8 @@ export function Signup() {
               placeholder="your@email.com"
               className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -44,6 +46,8 @@ export function Signup() {
               placeholder="Choose a username"
               className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
@@ -61,6 +65,8 @@ export function Signup() {
               placeholder="Create a strong password"
               className="bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <a href="#" className="text-blue-400">generate a password</a>
             <p className="text-xs text-gray-500 mt-1">
