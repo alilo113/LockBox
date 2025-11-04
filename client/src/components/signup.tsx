@@ -20,7 +20,7 @@ export function Signup() {
     }
 
     try {
-      let res = await fetch("http://localhost:4000/api/v1/auth/signup", {
+      let res = await fetch("http://127.0.0.1:5000/signup", {
         method: "POST",
         headers: headers,
         body: JSON.stringify(payloads)
