@@ -27,7 +27,10 @@ export function Signup() {
       });
       let data = await res.json();
       if (res.ok) {
-        // Handle successful signup (e.g., redirect or show success message)
+        console.log("Signup successful:", data);
+        setEmail("")
+        setUsername("")
+        setPassword("")
       } else {
         throw new Error(data.message || 'Signup failed');
       }

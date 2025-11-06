@@ -21,9 +21,11 @@ export function Login(){
         headers: headers,
         body: JSON.stringify(payloads)
       })
+      let data = await res.json()
       if (res.ok){
-        let data = await res.json()
         console.log(data)
+        setEmail("")
+        setPassword("")
       }
     } catch (error) {
       console.log(error)
