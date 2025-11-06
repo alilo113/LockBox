@@ -5,7 +5,29 @@ export function Login(){
   const [password, setPassword] = useState("")
 
   async function handleSubmit(){
-    null
+    let payloads = {
+      email: email,
+      password: password
+    }
+
+    let headers = {
+      "Content-Type": "application/json",
+      // Autorization: "Bearer " + token"     
+    }
+
+    try {
+      let res = await fetch("http://127.0.0.1:5000/lgoin", {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(payloads)
+      })
+      if (res.ok){
+        let data = await res.json()
+        console.log(data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
